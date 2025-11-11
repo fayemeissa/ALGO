@@ -1,0 +1,40 @@
+Dans ce point de contrôle, on vous demande d'écrire un algorithme qui lit
+ une phrase, qui se termine par un point, caractère par caractère, et de  
+ déterminer:
+    Le nombre de caractères.
+    Le nombre de mots.
+    Le nombre de voyelles.
+
+
+Algorithme AnalysePhrase;
+Variables
+    c : Caractère;
+    nbCar, nbMot, nbVoy : Entier;
+
+Début
+    nbCar ← 0;
+    nbMot ← 1;
+    nbVoy ← 0;
+
+    Ecrire("Entrez une phrase se terminant par un point :");
+    Lire(c);
+    TantQue c <> '.' Faire
+        nbCar <- nbCar + 1;
+        Si c = 'a' OU c = 'e' OU c = 'i' OU c = 'o' OU c = 'u' OU c = 'y' OU
+           c = 'A' OU c = 'E' OU c = 'I' OU c = 'O' OU c = 'U' OU c = 'Y' Alors
+              nbVoy ← nbVoy + 1;
+        FinSi;
+        Si c = ' ' Alors
+            nbMot ← nbMot + 1;
+        FinSi;
+        Lire(c);
+    FinTantQue;
+    nbCar ← nbCar + 1;
+    Ecrire("La longueur de la phrase est : ", nbCar);
+    Ecrire("Le nombre de mots est : ", nbMot);
+    Ecrire("Le nombre de voyelles est : ", nbVoy);
+Fin.
+
+
+    
+ 
