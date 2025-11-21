@@ -1,0 +1,45 @@
+Algorithme SommeElementsDistincts
+Variables
+    E1, E2 : tableau de entier
+    i, j : entier
+    somme : entier
+    trouve : booléen
+Début
+    E1 <- [3, 1, 7, 9]        // Exemple
+    E2 <- [2, 4, 1, 9, 3]
+    somme <- 0
+
+    // Ajouter les éléments de E1 qui ne sont pas dans E2
+    Pour i de 1 à longueur(E1) faire
+        trouve <- Faux
+        Pour j de 1 à longueur(E2) faire
+            Si E1[i] = E2[j] alors
+                trouve <- Vrai
+            FinSi
+        FinPour
+        Si trouve = Faux alors
+            somme <- somme + E1[i]
+        FinSi
+    FinPour
+
+    // Ajouter les éléments de E2 qui ne sont pas dans E1
+    Pour i de 1 à longueur(E2) faire
+        trouve <- Faux
+        Pour j de 1 à longueur(E1) faire
+            Si E2[i] = E1[j] alors
+                trouve <- Vrai
+            FinSi
+        FinPour
+        Si trouve = Faux alors
+            somme <- somme + E2[i]
+        FinSi
+    FinPour
+
+    Ecrire "La somme des éléments distincts est :", somme
+FinAlgorithme
+
+Résultat pour l’exemple :
+
+Éléments distincts : 2, 4, 7
+
+Somme : 13 ✅

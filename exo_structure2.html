@@ -1,0 +1,28 @@
+Fonction dot_product(v1, v2 : tableau de réel) : réel
+Variables
+    i : entier
+    ps : réel
+Début
+    ps <- 0
+    Pour i de 1 à longueur(v1) faire
+        ps <- ps + v1[i] * v2[i]
+    FinPour
+    Retourner ps
+FinFonction
+
+Algorithme VerifOrthogonalite
+Variables
+    v1, v2 : tableau de réel
+    ps : réel
+Début
+    v1 <- [1, 2, -1]
+    v2 <- [2, -1, 1]
+
+    ps <- dot_product(v1, v2)
+
+    Si ps = 0 alors
+        Ecrire "Les vecteurs sont orthogonaux"
+    Sinon
+        Ecrire "Les vecteurs ne sont pas orthogonaux"
+    FinSi
+FinAlgorithme
